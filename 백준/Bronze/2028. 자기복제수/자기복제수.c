@@ -2,23 +2,24 @@
 #include <stdio.h>
 
 int main() {
-	int T;
-	int num;
+	int T, N;
+
 	scanf("%d", &T);
 	for (int i = 0; i < T; i++) {
-		scanf("%d", &num);
-		
-		if (num > 99 && (num * num) % 1000 == num) {
+		scanf("%d", &N);
+
+		if (N > 99 && (N * N) % 1000 == N) {
 			printf("YES\n");
 		}
-		else if (num > 9 && (num * num) % 100 == num) {
+		else if (N > 9 && (N * N) % 100 == N) {
 			printf("YES\n");
 		}
-		else if (num > 0 && (num * num) % 10 == num) {
+		else if (N > 0 && (N * N) % 10 == N) {
 			printf("YES\n");
 		}
 		else {
 			printf("NO\n");
 		}
 	}
+	return 0;
 }
