@@ -1,9 +1,9 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#define min(a, b) a < b ? a : b 
+//#define min(a, b) a < b ? a : b 
 //다이나믹 프로그래밍(dp)
 
-/*
+
 int min(int a, int b) {
 	if (a < b) {
 		return a;
@@ -12,7 +12,6 @@ int min(int a, int b) {
 		return b;
 	}
 }
-*/
 
 int main() {
 	int dp[1000001] = { 0 };
