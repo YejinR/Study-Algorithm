@@ -1,29 +1,22 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-double factorial(int n) {
-	if (n == 1) {
-		return 1;
-	}
-	return n * factorial(n - 1);
-}
-
-double combination(int N, int M) {
-	if (M == 0 || M == N) {
-		return 1;
-	}
-	return factorial(N) / (factorial(M) * factorial(N - M));
-}
-
 int main() {
-	int T;
-	scanf("%d", &T);
+	int qurry_n;
+	int left, right;
+	int arr[31][31];
 
-	int N, M;
+	for (int i = 1; i < 31; i++) {
+		arr[i][i] = 1;
+		for (int j = i + 1; j < 31; j++) {
+			arr[i][j] = (i == 1 ? j : arr[i][j - 1] + arr[i - 1][j - 1]);
+		}
+	}
 
-	for (int i = 0; i < T; i++) {
-		scanf("%d %d", &N, &M);
-		printf("%.f\n", combination(M, N));
+	scanf("%d", &qurry_n);
+	for (int i = 0; i < qurry_n; i++) {
+		scanf("%d %d", &left, &right);
+		printf("%d\n", arr[left][right]);
 	}
 	return 0;
 }
